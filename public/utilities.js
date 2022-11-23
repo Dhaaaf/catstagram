@@ -30,7 +30,6 @@ function vote(type) {
 	if (score > 0) scoreCounter.className = "positive-score";
 	if (score < 0) scoreCounter.className = "negative-score";
 	if (score === 0) scoreCounter.className = "zero-score";
-	return score;
 }
 
 function addComment() {
@@ -60,7 +59,6 @@ function addComment() {
 		});
 	}
 	commentInputField.value = "";
-	return individualCommentBox;
 }
 
 export { setCatPic, resetScore, removeCatPic, vote, addComment };

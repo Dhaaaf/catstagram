@@ -1,4 +1,10 @@
-import { setCatPic, resetScore, removeCatPic, vote } from "./utilities.js";
+import {
+	setCatPic,
+	resetScore,
+	removeCatPic,
+	vote,
+	addComment
+} from "./utilities.js";
 
 window.addEventListener("DOMContentLoaded", () => {
 	setCatPic();
