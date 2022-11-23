@@ -1,3 +1,6 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 .main {
     display: flex;
     justify-content: center;
@@ -33,8 +36,56 @@ img {
 }
 
 .comment-display-container {
-    width: 95vw;
-    height: 50vh;
-    border: 1px solid black;
-    border-radius: 4px;
+    width: 608px;
+    min-height: 50px;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px lightslategrey;
+}
+
+.negative-score{
+    color: red
+}
+.positive-score{
+    color: green
+}
+.zero-score{
+    color: black;
+}
+.comment-box{
+    position: relative;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12.5px;
+    overflow-wrap: break-word;
+    color: white;
+    background-color: rgb(70, 70, 255);
+    box-shadow: 1px 1px 4px rgb(70, 70, 255);
+    min-height: 25px;
+    height: fit-content;
+    margin: 10px 15px;
+}
+
+.comment-text {
+    text-align: justify;
+}
+.delete-button{
+    background-color: rgba(0, 0, 0, 0.221);
+    color: rgba(255, 255, 255, 0.37);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    width: fit-content;
+    top: 8px;
+    right: 4px;
+}
+
+.delete-button:hover {
+    transition: .3s linear;
+    color: rgba(255, 255, 255, 0.788);
+    background-color: rgba(0, 0, 0, 0.822);
 }
