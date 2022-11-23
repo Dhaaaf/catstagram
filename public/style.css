@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 200px;
+    max-height: 300px;
+}
+
+#newCatButton {
+    margin-top: 3px;
+}
+
+#popularity {
+    font-size: small;
+    font-weight: 200;
+}
+
+.vote-buttons-container button {
+    margin-right: 5px;
+}
+
+.create-comments-container {
+    margin: 20px 2px;
+}
+
+.comment-display-container {
+    width: 95vw;
+    height: 50vh;
+    border: 1px solid black;
+    border-radius: 4px;
+}
