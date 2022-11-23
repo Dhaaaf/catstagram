@@ -1,25 +1,30 @@
 import { setCatPic, resetScore, removeCatPic, vote } from "./utilities.js"
 
-const newCatButton = document.querySelector('#newCatButton')
-const scoreCounter = document.querySelector("#scoreCounter")
-const upVoteButton = document.querySelector("#upVoteButton")
-const downVoteButton = document.querySelector("#downVoteButton")
+// const scoreCounter = document.querySelector("#scoreCounter")
 
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", () => {
     setCatPic()
     resetScore()
-}
 
-newCatButton.addEventListener("click", () => {
-    removeCatPic()
-    setCatPic()
-    resetScore()
+    const newCatButton = document.querySelector('#newCatButton')
+    newCatButton.addEventListener("click", () => {
+        removeCatPic()
+        setCatPic()
+        resetScore()
+    })
+
+    const upVoteButton = document.querySelector("#upVoteButton")
+    upVoteButton.addEventListener("click", () => {
+        vote("upVote")
+    })
+
+    const downVoteButton = document.querySelector("#downVoteButton")
+    downVoteButton.addEventListener("click", () => {
+        vote("downVote")
+    })
+
 })
 
-upVoteButton.addEventListener("click", () => {
-    vote("upVote")
-})
-
-downVoteButton.addEventListener("click", () => {
-    vote("downVote")
-})
+/// onload vs DOMContentLoaded
+/// Should we put all our functions in our load function?
+/// Why does this work as it is? Wasn't working outside the function
