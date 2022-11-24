@@ -58,7 +58,7 @@ img {
     display: flex;
     justify-content: space-between;
     border-radius: 12.5px;
-    overflow-wrap: break-word;
+    overflow: hidden;
     color: white;
     background-color: rgb(70, 70, 255);
     box-shadow: 1px 1px 4px rgb(70, 70, 255);
