@@ -5,9 +5,17 @@ const setCatPic = async () => {
 
 	const catImage = document.createElement("img");
 	catImage.src = catUrl;
+	localStorage.setItem("catImg", catUrl);
 	const imgContainer = document.querySelector(".image-container");
 	imgContainer.appendChild(catImage);
 };
+
+function reloadCatPic() {
+	const catImage = document.createElement("img");
+	catImage.src = localStorage.getItem("catImg");
+	const imgContainer = document.querySelector(".image-container");
+	imgContainer.appendChild(catImage);
+}
 
 const removeCatPic = () => {
 	const catImage = document.querySelector("img");
@@ -61,4 +69,4 @@ function addComment() {
 	commentInputField.value = "";
 }
 
-export { setCatPic, resetScore, removeCatPic, vote, addComment };
+export { setCatPic, resetScore, removeCatPic, vote, addComment, reloadCatPic };

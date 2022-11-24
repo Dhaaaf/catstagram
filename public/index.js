@@ -3,12 +3,17 @@ import {
 	resetScore,
 	removeCatPic,
 	vote,
-	addComment
+	addComment,
+	reloadCatPic
 } from "./utilities.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-	setCatPic();
-	resetScore();
+	if (localStorage.getItem("catImg")) {
+		reloadCatPic();
+	} else {
+		setCatPic();
+		resetScore();
+	}
 
 	const newCatButton = document.querySelector("#newCatButton");
 	newCatButton.addEventListener("click", () => {
