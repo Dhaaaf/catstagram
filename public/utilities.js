@@ -29,6 +29,16 @@ function resetScore() {
 	scoreCounter.innerText = score;
 }
 
+function reloadScore() {
+	const scoreCounter = document.querySelector("#scoreCounter");
+	let score = Number(scoreCounter.innerText);
+	score = localStorage.getItem("score")
+	scoreCounter.innerText = score;
+	if (score > 0) scoreCounter.className = "positive-score";
+	if (score < 0) scoreCounter.className = "negative-score";
+	if (score === 0) scoreCounter.className = "zero-score";
+}
+
 function vote(type) {
 	const scoreCounter = document.querySelector("#scoreCounter");
 	let score = Number(scoreCounter.innerText);
@@ -38,11 +48,16 @@ function vote(type) {
 	if (score > 0) scoreCounter.className = "positive-score";
 	if (score < 0) scoreCounter.className = "negative-score";
 	if (score === 0) scoreCounter.className = "zero-score";
+	localStorage.setItem("score", score)
 }
+
+// let commentArray = [];
 
 function addComment() {
 	const commentInputField = document.querySelector("#addCommentInput");
 	let text = commentInputField.value;
+	// commentArray.push(text)
+	// localStorage.setItem("comments", JSON.stringify(commentArray))
 	if (text) {
 		const commentContainer = document.querySelector(
 			".comment-display-container"
@@ -69,4 +84,42 @@ function addComment() {
 	commentInputField.value = "";
 }
 
-export { setCatPic, resetScore, removeCatPic, vote, addComment, reloadCatPic };
+function reloadComments() {
+	// const commentInputField = document.querySelector("#addCommentInput");
+	// const commentArray = JSON.parse(localStorage.getItem("comments"));
+	// console.log(commentArray)
+	// commentArray.forEach(text => {
+	// 	const commentContainer = document.querySelector(
+	// 		".comment-display-container"
+	// 	);
+	// 	// comment box
+	// 	const individualCommentBox = document.createElement("div");
+	// 	individualCommentBox.className = "comment-box";
+	// 	commentContainer.append(individualCommentBox);
+	// 	//comment
+	// 	const comment = document.createElement("p");
+	// 	comment.className = "comment-text";
+	// 	comment.innerText = text;
+	// 	individualCommentBox.append(comment);
+
+	// 	//deletbutton
+	// 	const deleteButton = document.createElement("button");
+	// 	deleteButton.className = "delete-button";
+	// 	deleteButton.innerText = "X";
+	// 	individualCommentBox.append(deleteButton);
+	// 	deleteButton.addEventListener("click", () => {
+	// 		individualCommentBox.remove();
+	// 	});
+	// })
+}
+
+export {
+	setCatPic,
+	resetScore,
+	removeCatPic,
+	vote,
+	addComment,
+	reloadCatPic,
+	reloadScore,
+	reloadComments,
+};

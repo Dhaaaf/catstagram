@@ -4,12 +4,16 @@ import {
 	removeCatPic,
 	vote,
 	addComment,
-	reloadCatPic
+	reloadCatPic,
+	reloadScore,
+	reloadComments,
 } from "./utilities.js";
 
 window.addEventListener("DOMContentLoaded", () => {
 	if (localStorage.getItem("catImg")) {
 		reloadCatPic();
+		reloadScore();
+		reloadComments();
 	} else {
 		setCatPic();
 		resetScore();
