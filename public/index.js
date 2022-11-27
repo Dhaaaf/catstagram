@@ -6,17 +6,14 @@ import {
 	addComment,
 	reloadCatPic,
 	reloadScore,
-	reloadComments
+	removeAllComments
 } from "./utilities.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-	const origComments = localStorage.getItem("comments");
+	// const comments = [];
 	if (localStorage.getItem("catImg")) {
 		reloadCatPic();
 		reloadScore();
-		if (origComments) {
-			reloadComments(JSON.parse(origComments));
-		}
 	} else {
 		setCatPic();
 		resetScore();
@@ -27,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		removeCatPic();
 		setCatPic();
 		resetScore();
+		removeAllComments();
 	});
 
 	const upVoteButton = document.querySelector("#upVoteButton");
@@ -42,11 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	const commentButton = document.querySelector("#comment-submit-button");
 	commentButton.addEventListener("click", event => {
 		event.preventDefault();
-		const comments = JSON.parse(localStorage.getItem("comments"));
-		if (comments) {
-			addComment(comments);
-		} else {
-			addComment();
-		}
+		// comments.push(addComment());
+		// localStorage.setItem("comments", JSON.stringify(comments));
 	});
 });

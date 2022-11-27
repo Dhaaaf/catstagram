@@ -31,7 +31,7 @@ function resetScore() {
 
 function reloadScore() {
 	const scoreCounter = document.querySelector("#scoreCounter");
-	let score = Number(scoreCounter.innerText);
+	let score = Number(scoreCounter.innerText); // lets change this
 	score = localStorage.getItem("score");
 	scoreCounter.innerText = score;
 	if (score > 0) scoreCounter.className = "positive-score";
@@ -51,14 +51,10 @@ function vote(type) {
 	localStorage.setItem("score", score);
 }
 
-// let commentArray = [];
-
-function addComment(arr = []) {
+function addComment() {
 	const commentInputField = document.querySelector("#addCommentInput");
 	let text = commentInputField.value;
 	if (text) {
-		arr.push(text);
-		localStorage.setItem("comments", JSON.stringify(arr));
 		const commentContainer = document.querySelector(
 			".comment-display-container"
 		);
@@ -80,30 +76,16 @@ function addComment(arr = []) {
 		deleteButton.addEventListener("click", () => {
 			individualCommentBox.remove();
 		});
+
+		return comment.innerText;
 	}
 	commentInputField.value = "";
 }
 
-function reloadComments(arrOfComments) {
-	const commentContainer = document.querySelector(".comment-display-container");
-	// comment box
-	arrOfComments.forEach(text => {
-		const individualCommentBox = document.createElement("div");
-		individualCommentBox.className = "comment-box";
-		commentContainer.append(individualCommentBox);
-		//comment
-		const comment = document.createElement("p");
-		comment.className = "comment-text";
-		comment.innerText = text;
-		individualCommentBox.append(comment);
-		//deletebutton
-		const deleteButton = document.createElement("button");
-		deleteButton.className = "delete-button";
-		deleteButton.innerText = "X";
-		individualCommentBox.append(deleteButton);
-		deleteButton.addEventListener("click", () => {
-			individualCommentBox.remove();
-		});
+function removeAllComments() {
+	const comments = document.querySelectorAll(".comment-box");
+	comments.forEach(comment => {
+		comment.remove();
 	});
 }
 
@@ -115,5 +97,5 @@ export {
 	addComment,
 	reloadCatPic,
 	reloadScore,
-	reloadComments
+	removeAllComments
 };
