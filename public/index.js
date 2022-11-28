@@ -6,14 +6,15 @@ import {
 	addComment,
 	reloadCatPic,
 	reloadScore,
-	removeAllComments
+	removeAllComments,
+	reloadComments
 } from "./utilities.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-	// const comments = [];
 	if (localStorage.getItem("catImg")) {
 		reloadCatPic();
 		reloadScore();
+		reloadComments();
 	} else {
 		setCatPic();
 		resetScore();
@@ -37,10 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
 		vote("downVote");
 	});
 
+	let comments;
 	const commentButton = document.querySelector("#comment-submit-button");
 	commentButton.addEventListener("click", event => {
 		event.preventDefault();
-		// comments.push(addComment());
-		// localStorage.setItem("comments", JSON.stringify(comments));
+		if (localStorage.getItem("comments")) {
+			comments = JSON.parse(localStorage.getItem("comments"));
+		} else {
+			comments = [];
+		}
+		comments.push(addComment());
+		localStorage.setItem("comments", JSON.stringify(comments));
 	});
 });
