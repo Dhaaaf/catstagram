@@ -81,9 +81,9 @@ function addComment() {
 			});
 			localStorage.setItem("comments", JSON.stringify(comments));
 		});
+		commentInputField.value = "";
 		return text;
 	}
-	commentInputField.value = "";
 }
 
 function reloadComments() {
