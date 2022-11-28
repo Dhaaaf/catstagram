@@ -5,28 +5,33 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<title>Catstagram</title>
 </head>
 
 <body>
 	<div class="main">
 		<div class="inner">
-			<h1>Kitten Pic</h1>
 			<div class="image-container"></div>
 
 			<!-- popularity score  -->
 			<button id="newCatButton">Get New Kitty</button>
-			<h2 id="popularity">
-				Popularity Score: <span id="scoreCounter"></span>
-			</h2>
 			<div class="vote-buttons-container">
 				<!-- upvote / downvote btns  -->
-				<button id="upVoteButton">Upvote</button><button id="downVoteButton">Downvote</button>
+				<span id="upVoteButton" class="material-symbols-outlined">
+					arrow_upward
+				</span>
+				<div id="scoreCounter"></div>
+				<span id="downVoteButton" class="material-symbols-outlined">
+					arrow_downward
+				</span>
 			</div>
 			<div class="create-comments-container">
 				<!-- comment / textbox that says add a comment  / submit comment button-->
 				<form>
-					<label for="add-comment">Comment:</label>
 					<input type="text" name="add-comment" id="addCommentInput" placeholder="Add a comment..." />
 					<input type="submit" value="Submit" id="comment-submit-button" />
 				</form>

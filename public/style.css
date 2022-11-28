@@ -52,6 +52,19 @@ img {
     margin-right: 5px;
 }
 
+#upVoteButton,
+#downVoteButton {
+    cursor: pointer;
+}
+
+#upVoteButton {
+    color: green;
+}
+
+#downVoteButton {
+    color: red;
+}
+
 .create-comments-container {
     margin: 20px 2px;
 }
