@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(126, 181, 252)
+    background-color: #ffcdb2;
+    color: #6d6875;
 }
 
-input[type="submit"],
+/* input[type="submit"], */
 button:not(.delete-button) {
-    border: none;
-    background-color: rgb(57, 83, 212);
+    border: 1px solid #6d6875;
+    background-color: #e5989b;
     color: #ffffff;
     border-radius: 5px;
-    padding: 6px;
+    height: 25px;
+    cursor: pointer;
 }
 
 .image-container {
@@ -20,6 +23,7 @@ button:not(.delete-button) {
     background-size: cover;
     background-position: center;
     border-radius: 5px;
+    border: 1px solid #6d6875;
 }
 
 .main {
@@ -34,14 +38,10 @@ button:not(.delete-button) {
     justify-content: center;
 }
 
-img {
-    max-width: 200px;
-    max-height: 300px;
-}
 
 #newCatButton {
-    margin-top: 20px;
-    height: 25px
+    height: 25px;
+    width: 18%;
 }
 
 #popularity {
@@ -49,68 +49,74 @@ img {
     font-weight: 200;
 }
 
-.vote-buttons-container button {
-    margin-right: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
 
 .vote-buttons-container {
     display: flex;
     margin: 15px 0;
-    border: 2px solid red;
     justify-content: space-between;
+    align-items: center;
     width: 400px
 }
-
+h1{
+    margin:0;
+    font-family: 'Dancing Script', cursive;
+}
 #upVoteButton,
 #downVoteButton {
     cursor: pointer;
 }
 
 #upVoteButton {
-    color: green;
+    color: #b5838d;
 }
 
+
+#downVoteButton {
+    color: #6d6875;
+}
 .up-down {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-#downVoteButton {
-    color: red;
-}
-
 .create-comments-container {
-    margin: 20px 2px;
-    border: 2px solid purple;
+    margin-bottom: 15px;
     width: 100%;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
 }
 
 #addCommentInput {
-    width: 80%
+    width: 79%;
+    margin: 0;
+    border: 1px solid #b5838d;
+    border-radius: 5px;
 }
 
 #comment-submit-button {
-    width: 15%
+    width: 18%;
+    border: 1px solid #6d6875;
+    background-color: #e5989b;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .comment-display-container {
     width: 400px;
     min-height: 50px;
     height: fit-content;
-    /* border-radius: 5px; */
-    /* box-shadow: 1px 1px 3px lightslategrey; */
 }
 
 .negative-score {
-    color: red
+    color: #b5838d;
 }
 
 .positive-score {
-    color: green
+    color: #e5989b;
 }
 
 .zero-score {
@@ -125,8 +131,8 @@ img {
     border-radius: 12.5px;
     overflow: hidden;
     color: white;
-    background-color: rgb(70, 70, 255);
-    box-shadow: 1px 1px 4px rgb(70, 70, 255);
+    background-color: #e5989b;
+    box-shadow: 1px 1px 4px #e5989b;
     min-height: 25px;
     height: fit-content;
     margin: 10px 0px;
@@ -137,7 +143,7 @@ img {
 }
 
 .delete-button {
-    background-color: rgba(0, 0, 0, 0.221);
+    background-color: #b5838d;
     color: rgba(255, 255, 255, 0.37);
     height: 20px;
     width: 20px;
@@ -146,12 +152,12 @@ img {
     border: none;
     position: absolute;
     width: fit-content;
-    top: 8px;
+    top: 6px;
     right: 4px;
 }
 
 .delete-button:hover {
+    background-color: #6d6875;
     transition: .3s linear;
     color: rgba(255, 255, 255, 0.788);
-    background-color: rgba(0, 0, 0, 0.822);
 }
