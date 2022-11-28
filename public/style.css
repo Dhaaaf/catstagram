@@ -78,7 +78,19 @@ h1{
     display: flex;
     align-items: center;
 }
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+.noSelect:focus {
+    outline: none !important;
+}
 .create-comments-container {
     margin-bottom: 15px;
     width: 100%;
@@ -112,15 +124,14 @@ form{
 }
 
 .negative-score {
-    color: #b5838d;
+    color: #ff8ea5;
 }
-
 .positive-score {
-    color: #e5989b;
+    color: #b36ead;
 }
 
 .zero-score {
-    color: black;
+    color: #6d6875;
 }
 
 .comment-box {

@@ -7,25 +7,20 @@ const setCatPic = async () => {
 	// catImage.style.backgroundImage = `url(${catUrl})`;
 	localStorage.setItem("catImg", catUrl);
 	const imgContainer = document.querySelector(".image-container");
-	imgContainer.style.backgroundImage = `url(${catUrl})`
+	imgContainer.style.backgroundImage = `url(${catUrl})`;
 };
 
 function reloadCatPic() {
 	const catUrl = localStorage.getItem("catImg");
 	const imgContainer = document.querySelector(".image-container");
-	imgContainer.style.backgroundImage = `url(${catUrl})`
+	imgContainer.style.backgroundImage = `url(${catUrl})`;
 }
-
-// const removeCatPic = () => {
-// 	const catImage = document.querySelector("img");
-// 	catImage.remove();
-// };
 
 function resetScore() {
 	const scoreCounter = document.querySelector("#scoreCounter");
 	let score = Number(scoreCounter.innerText);
 	score = 0;
-	scoreCounter.className = "zero-score"
+	scoreCounter.className = "zero-score";
 	scoreCounter.innerText = score;
 	localStorage.setItem("score", score);
 }
