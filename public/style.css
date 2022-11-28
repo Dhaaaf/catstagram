@@ -40,7 +40,8 @@ img {
 }
 
 #newCatButton {
-    margin-top: 3px;
+    margin-top: 20px;
+    height: 25px
 }
 
 #popularity {
@@ -50,6 +51,17 @@ img {
 
 .vote-buttons-container button {
     margin-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.vote-buttons-container {
+    display: flex;
+    margin: 15px 0;
+    border: 2px solid red;
+    justify-content: space-between;
+    width: 400px
 }
 
 #upVoteButton,
@@ -61,12 +73,28 @@ img {
     color: green;
 }
 
+.up-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #downVoteButton {
     color: red;
 }
 
 .create-comments-container {
     margin: 20px 2px;
+    border: 2px solid purple;
+    width: 100%;
+}
+
+#addCommentInput {
+    width: 80%
+}
+
+#comment-submit-button {
+    width: 15%
 }
 
 .comment-display-container {

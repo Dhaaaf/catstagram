@@ -48,7 +48,10 @@ window.addEventListener("DOMContentLoaded", () => {
 		} else {
 			comments = [];
 		}
-		comments.push(addComment());
-		localStorage.setItem("comments", JSON.stringify(comments));
+		const comment = addComment();
+		if (comment) {
+			comments.push(comment);
+			localStorage.setItem("comments", JSON.stringify(comments));
+		}
 	});
 });
