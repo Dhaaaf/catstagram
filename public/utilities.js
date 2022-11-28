@@ -3,29 +3,29 @@ const setCatPic = async () => {
 	const res = await request.json();
 	const catUrl = res[0].url;
 
-	const catImage = document.createElement("img");
-	catImage.src = catUrl;
+	// const catImage = document.createElement("div");
+	// catImage.style.backgroundImage = `url(${catUrl})`;
 	localStorage.setItem("catImg", catUrl);
 	const imgContainer = document.querySelector(".image-container");
-	imgContainer.appendChild(catImage);
+	imgContainer.style.backgroundImage = `url(${catUrl})`
 };
 
 function reloadCatPic() {
-	const catImage = document.createElement("img");
-	catImage.src = localStorage.getItem("catImg");
+	const catUrl = localStorage.getItem("catImg");
 	const imgContainer = document.querySelector(".image-container");
-	imgContainer.appendChild(catImage);
+	imgContainer.style.backgroundImage = `url(${catUrl})`
 }
 
-const removeCatPic = () => {
-	const catImage = document.querySelector("img");
-	catImage.remove();
-};
+// const removeCatPic = () => {
+// 	const catImage = document.querySelector("img");
+// 	catImage.remove();
+// };
 
 function resetScore() {
 	const scoreCounter = document.querySelector("#scoreCounter");
 	let score = Number(scoreCounter.innerText);
 	score = 0;
+	scoreCounter.className = "zero-score"
 	scoreCounter.innerText = score;
 	localStorage.setItem("score", score);
 }
@@ -132,7 +132,7 @@ function removeAllComments() {
 export {
 	setCatPic,
 	resetScore,
-	removeCatPic,
+	// removeCatPic,
 	vote,
 	addComment,
 	reloadCatPic,

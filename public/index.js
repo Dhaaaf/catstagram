@@ -1,7 +1,7 @@
 import {
 	setCatPic,
 	resetScore,
-	removeCatPic,
+	// removeCatPic,
 	vote,
 	addComment,
 	reloadCatPic,
@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	const newCatButton = document.querySelector("#newCatButton");
 	newCatButton.addEventListener("click", () => {
-		removeCatPic();
+		// removeCatPic();
 		setCatPic();
 		resetScore();
 		removeAllComments();
