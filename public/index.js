@@ -39,8 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 
 	let comments;
-	const commentButton = document.querySelector("#comment-submit-button");
-	commentButton.addEventListener("click", event => {
+
+	const commentForm = document.querySelector("form");
+	commentForm.addEventListener("submit", event => {
 		event.preventDefault();
 		if (localStorage.getItem("comments")) {
 			comments = JSON.parse(localStorage.getItem("comments"));

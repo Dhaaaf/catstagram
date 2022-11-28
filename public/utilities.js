@@ -27,6 +27,7 @@ function resetScore() {
 	let score = Number(scoreCounter.innerText);
 	score = 0;
 	scoreCounter.innerText = score;
+	localStorage.setItem("score", score);
 }
 
 function reloadScore() {
@@ -87,35 +88,37 @@ function addComment() {
 }
 
 function reloadComments() {
-	let comments = JSON.parse(localStorage.getItem("comments"));
-	comments.forEach(text => {
-		const commentContainer = document.querySelector(
-			".comment-display-container"
-		);
-		// comment box
-		const individualCommentBox = document.createElement("div");
-		individualCommentBox.className = "comment-box";
-		commentContainer.append(individualCommentBox);
-		//comment
-		const comment = document.createElement("p");
-		comment.className = "comment-text";
-		comment.innerText = text;
-		individualCommentBox.append(comment);
+	if (localStorage.getItem("comments")) {
+		let comments = JSON.parse(localStorage.getItem("comments"));
+		comments.forEach(text => {
+			const commentContainer = document.querySelector(
+				".comment-display-container"
+			);
+			// comment box
+			const individualCommentBox = document.createElement("div");
+			individualCommentBox.className = "comment-box";
+			commentContainer.append(individualCommentBox);
+			//comment
+			const comment = document.createElement("p");
+			comment.className = "comment-text";
+			comment.innerText = text;
+			individualCommentBox.append(comment);
 
-		//deletbutton
-		const deleteButton = document.createElement("button");
-		deleteButton.className = "delete-button";
-		deleteButton.innerText = "X";
-		individualCommentBox.append(deleteButton);
-		deleteButton.addEventListener("click", () => {
-			individualCommentBox.remove();
-			let comments = JSON.parse(localStorage.getItem("comments"));
-			comments = comments.filter(el => {
-				return el !== text;
+			//deletbutton
+			const deleteButton = document.createElement("button");
+			deleteButton.className = "delete-button";
+			deleteButton.innerText = "X";
+			individualCommentBox.append(deleteButton);
+			deleteButton.addEventListener("click", () => {
+				individualCommentBox.remove();
+				let comments = JSON.parse(localStorage.getItem("comments"));
+				comments = comments.filter(el => {
+					return el !== text;
+				});
+				localStorage.setItem("comments", JSON.stringify(comments));
 			});
-			localStorage.setItem("comments", JSON.stringify(comments));
 		});
-	});
+	}
 }
 
 function removeAllComments() {
